@@ -1,0 +1,42 @@
+Title: Roommates Bill
+Description: An app that gets as input the amount of a bill for a particular period
+and the     days that each of the roommates stayed in the house for that period
+and returns how much each roommate has to pay. It also generates a PDF report
+stating the names of the roommates, the period, and how much each of them had to pay.
+Objects: Bill:
+            amount
+            period
+         Roommate:
+            name
+            days_in_house
+            pays(bill)
+         PdfReport:
+            filename
+            generate(roommate1, roommate2, bill)
+
+
+
+Extra class for ResultPage
+# class ResultPage(MethodView):
+
+#     def post(self):
+#         billform = BillForm(request.form)
+#         amount = billform.amount.data
+#         period = billform.period.data
+
+#         name1 = billform.name1.data
+#         name2 = billform.name2.data
+#         days_in_house1 = billform.days_in_house1.data
+#         days_in_house2 = billform.days_in_house2.data
+
+#         the_bill = room.Bill(float(amount), period)
+#         roommate1 = room.Roommate(name1, float(days_in_house1))
+#         roommate2 = room.Roommate(name2, float(days_in_house2))
+
+#         return render_template('results.html',
+#                                name1=roommate1.name,
+#                                amount1=roommate1.pays(the_bill, roommate2),
+#                                name2=roommate2.name,
+#                                amount2=roommate2.pays(the_bill, roommate1))
+
+# app.add_url_rule('/results', view_func=ResultPage.as_view('results_page'))
